@@ -1,0 +1,816 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8774D0802DBBA7B000B602A5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8774D07F2DBBA7B000B602A5 /* WidgetKit.framework */; };
+		8774D0822DBBA7B000B602A5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8774D0812DBBA7B000B602A5 /* SwiftUI.framework */; };
+		8774D0912DBBA7B100B602A5 /* CityGuideWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8774D07D2DBBA7B000B602A5 /* CityGuideWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BD6A44F52E8ECCB600437968 /* CityGuideWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BD6A44EB2E8ECCB500437968 /* CityGuideWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8774D08F2DBBA7B100B602A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD22B1B02D8ACF9D005A8480 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8774D07C2DBBA7B000B602A5;
+			remoteInfo = CityGuideWidgetExtension;
+		};
+		BD6A44F32E8ECCB600437968 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD22B1B02D8ACF9D005A8480 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD6A44EA2E8ECCB500437968;
+			remoteInfo = "CityGuideWatch Watch App";
+		};
+		DD6AB86F2EA9006100785EB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD22B1B02D8ACF9D005A8480 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD22B1B72D8ACF9D005A8480;
+			remoteInfo = CityGuide;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8774D0922DBBA7B100B602A5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8774D0912DBBA7B100B602A5 /* CityGuideWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD6A44F62E8ECCB600437968 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BD6A44F52E8ECCB600437968 /* CityGuideWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8774D07D2DBBA7B000B602A5 /* CityGuideWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CityGuideWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8774D07F2DBBA7B000B602A5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8774D0812DBBA7B000B602A5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		BD22B1B82D8ACF9D005A8480 /* CityGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD6A44EB2E8ECCB500437968 /* CityGuideWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CityGuideWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6AB86B2EA9006100785EB0 /* CityGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6AB98D2EA93FD900785EB0 /* CityGuide.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CityGuide.xctestplan; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8774D0952DBBA7B100B602A5 /* Exceptions for "CityGuideWidget" folder in "CityGuideWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8774D07C2DBBA7B000B602A5 /* CityGuideWidgetExtension */;
+		};
+		8774D0A02DBBB37400B602A5 /* Exceptions for "CityGuide" folder in "CityGuideWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Services/Location/LocationManager.swift,
+				Services/Location/LocationManaging.swift,
+			);
+			target = 8774D07C2DBBA7B000B602A5 /* CityGuideWidgetExtension */;
+		};
+		BD6A45002E8ED03300437968 /* Exceptions for "CityGuide" folder in "CityGuideWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DI/DIManager.swift,
+				DI/Injected.swift,
+				Model/CityGuide.xcdatamodeld,
+				Model/MapPlace.swift,
+				Model/WeatherData.swift,
+				Screens/List/MapPlacesViewModel.swift,
+				Screens/List/MapPlacesViewState.swift,
+				Services/Data/CoreDataManager.swift,
+				Services/Data/DataManaging.swift,
+				Services/Data/MockDataManager.swift,
+				Services/Location/LocationManager.swift,
+				Services/Location/LocationManaging.swift,
+				Services/Networking/APIManager.swift,
+				Services/Networking/Endpoint.swift,
+				Services/Networking/Misc.swift,
+				Services/Networking/WeatherDataRouter.swift,
+				UIComponents/Resources/Colors.swift,
+			);
+			target = BD6A44EA2E8ECCB500437968 /* CityGuideWatch Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8774D0832DBBA7B000B602A5 /* CityGuideWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8774D0952DBBA7B100B602A5 /* Exceptions for "CityGuideWidget" folder in "CityGuideWidgetExtension" target */,
+			);
+			path = CityGuideWidget;
+			sourceTree = "<group>";
+		};
+		BD22B1BA2D8ACF9D005A8480 /* CityGuide */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8774D0A02DBBB37400B602A5 /* Exceptions for "CityGuide" folder in "CityGuideWidgetExtension" target */,
+				BD6A45002E8ED03300437968 /* Exceptions for "CityGuide" folder in "CityGuideWatch Watch App" target */,
+			);
+			path = CityGuide;
+			sourceTree = "<group>";
+		};
+		BD6A44EC2E8ECCB500437968 /* CityGuideWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "CityGuideWatch Watch App";
+			sourceTree = "<group>";
+		};
+		DD6AB86C2EA9006100785EB0 /* CityGuideTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CityGuideTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8774D07A2DBBA7B000B602A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8774D0822DBBA7B000B602A5 /* SwiftUI.framework in Frameworks */,
+				8774D0802DBBA7B000B602A5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD22B1B52D8ACF9D005A8480 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD6A44E82E8ECCB500437968 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD6AB8682EA9006100785EB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8774D07E2DBBA7B000B602A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8774D07F2DBBA7B000B602A5 /* WidgetKit.framework */,
+				8774D0812DBBA7B000B602A5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD22B1AF2D8ACF9D005A8480 = {
+			isa = PBXGroup;
+			children = (
+				DD6AB98D2EA93FD900785EB0 /* CityGuide.xctestplan */,
+				BD22B1BA2D8ACF9D005A8480 /* CityGuide */,
+				8774D0832DBBA7B000B602A5 /* CityGuideWidget */,
+				BD6A44EC2E8ECCB500437968 /* CityGuideWatch Watch App */,
+				DD6AB86C2EA9006100785EB0 /* CityGuideTests */,
+				8774D07E2DBBA7B000B602A5 /* Frameworks */,
+				BD22B1B92D8ACF9D005A8480 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD22B1B92D8ACF9D005A8480 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD22B1B82D8ACF9D005A8480 /* CityGuide.app */,
+				8774D07D2DBBA7B000B602A5 /* CityGuideWidgetExtension.appex */,
+				BD6A44EB2E8ECCB500437968 /* CityGuideWatch Watch App.app */,
+				DD6AB86B2EA9006100785EB0 /* CityGuideTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8774D07C2DBBA7B000B602A5 /* CityGuideWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8774D0962DBBA7B100B602A5 /* Build configuration list for PBXNativeTarget "CityGuideWidgetExtension" */;
+			buildPhases = (
+				8774D0792DBBA7B000B602A5 /* Sources */,
+				8774D07A2DBBA7B000B602A5 /* Frameworks */,
+				8774D07B2DBBA7B000B602A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8774D0832DBBA7B000B602A5 /* CityGuideWidget */,
+			);
+			name = CityGuideWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CityGuideWidgetExtension;
+			productReference = 8774D07D2DBBA7B000B602A5 /* CityGuideWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		BD22B1B72D8ACF9D005A8480 /* CityGuide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD22B1C62D8ACF9E005A8480 /* Build configuration list for PBXNativeTarget "CityGuide" */;
+			buildPhases = (
+				BD22B1B42D8ACF9D005A8480 /* Sources */,
+				BD22B1B52D8ACF9D005A8480 /* Frameworks */,
+				BD22B1B62D8ACF9D005A8480 /* Resources */,
+				8774D0922DBBA7B100B602A5 /* Embed Foundation Extensions */,
+				BD6A44F62E8ECCB600437968 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8774D0902DBBA7B100B602A5 /* PBXTargetDependency */,
+				BD6A44F42E8ECCB600437968 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BD22B1BA2D8ACF9D005A8480 /* CityGuide */,
+			);
+			name = CityGuide;
+			packageProductDependencies = (
+			);
+			productName = CityGuide;
+			productReference = BD22B1B82D8ACF9D005A8480 /* CityGuide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BD6A44EA2E8ECCB500437968 /* CityGuideWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD6A44F92E8ECCB600437968 /* Build configuration list for PBXNativeTarget "CityGuideWatch Watch App" */;
+			buildPhases = (
+				BD6A44E72E8ECCB500437968 /* Sources */,
+				BD6A44E82E8ECCB500437968 /* Frameworks */,
+				BD6A44E92E8ECCB500437968 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BD6A44EC2E8ECCB500437968 /* CityGuideWatch Watch App */,
+			);
+			name = "CityGuideWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "CityGuideWatch Watch App";
+			productReference = BD6A44EB2E8ECCB500437968 /* CityGuideWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD6AB86A2EA9006100785EB0 /* CityGuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6AB8732EA9006100785EB0 /* Build configuration list for PBXNativeTarget "CityGuideTests" */;
+			buildPhases = (
+				DD6AB8672EA9006100785EB0 /* Sources */,
+				DD6AB8682EA9006100785EB0 /* Frameworks */,
+				DD6AB8692EA9006100785EB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD6AB8702EA9006100785EB0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DD6AB86C2EA9006100785EB0 /* CityGuideTests */,
+			);
+			name = CityGuideTests;
+			packageProductDependencies = (
+			);
+			productName = CityGuideTests;
+			productReference = DD6AB86B2EA9006100785EB0 /* CityGuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD22B1B02D8ACF9D005A8480 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					8774D07C2DBBA7B000B602A5 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					BD22B1B72D8ACF9D005A8480 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					BD6A44EA2E8ECCB500437968 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					DD6AB86A2EA9006100785EB0 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = BD22B1B72D8ACF9D005A8480;
+					};
+				};
+			};
+			buildConfigurationList = BD22B1B32D8ACF9D005A8480 /* Build configuration list for PBXProject "CityGuide" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				sk,
+			);
+			mainGroup = BD22B1AF2D8ACF9D005A8480;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BD22B1B92D8ACF9D005A8480 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD22B1B72D8ACF9D005A8480 /* CityGuide */,
+				8774D07C2DBBA7B000B602A5 /* CityGuideWidgetExtension */,
+				BD6A44EA2E8ECCB500437968 /* CityGuideWatch Watch App */,
+				DD6AB86A2EA9006100785EB0 /* CityGuideTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8774D07B2DBBA7B000B602A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD22B1B62D8ACF9D005A8480 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD6A44E92E8ECCB500437968 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD6AB8692EA9006100785EB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8774D0792DBBA7B000B602A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD22B1B42D8ACF9D005A8480 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD6A44E72E8ECCB500437968 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD6AB8672EA9006100785EB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8774D0902DBBA7B100B602A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8774D07C2DBBA7B000B602A5 /* CityGuideWidgetExtension */;
+			targetProxy = 8774D08F2DBBA7B100B602A5 /* PBXContainerItemProxy */;
+		};
+		BD6A44F42E8ECCB600437968 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD6A44EA2E8ECCB500437968 /* CityGuideWatch Watch App */;
+			targetProxy = BD6A44F32E8ECCB600437968 /* PBXContainerItemProxy */;
+		};
+		DD6AB8702EA9006100785EB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD22B1B72D8ACF9D005A8480 /* CityGuide */;
+			targetProxy = DD6AB86F2EA9006100785EB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8774D0932DBBA7B100B602A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CityGuideWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CityGuideWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need location to show the coordinates";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide.CityGuideWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8774D0942DBBA7B100B602A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CityGuideWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CityGuideWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need location to show the coordinates";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide.CityGuideWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BD22B1C42D8ACF9E005A8480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BD22B1C52D8ACF9E005A8480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD22B1C72D8ACF9E005A8480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CityGuide/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need access to location to move the map";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD22B1C82D8ACF9E005A8480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CityGuide/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need access to location to move the map";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BD6A44F72E8ECCB600437968 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CityGuideWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cz.mendelu.CityGuide;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		BD6A44F82E8ECCB600437968 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CityGuideWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cz.mendelu.CityGuide;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		DD6AB8712EA9006100785EB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide.CityGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CityGuide";
+			};
+			name = Debug;
+		};
+		DD6AB8722EA9006100785EB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.mendelu.CityGuide.CityGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CityGuide";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8774D0962DBBA7B100B602A5 /* Build configuration list for PBXNativeTarget "CityGuideWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8774D0932DBBA7B100B602A5 /* Debug */,
+				8774D0942DBBA7B100B602A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD22B1B32D8ACF9D005A8480 /* Build configuration list for PBXProject "CityGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD22B1C42D8ACF9E005A8480 /* Debug */,
+				BD22B1C52D8ACF9E005A8480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD22B1C62D8ACF9E005A8480 /* Build configuration list for PBXNativeTarget "CityGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD22B1C72D8ACF9E005A8480 /* Debug */,
+				BD22B1C82D8ACF9E005A8480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD6A44F92E8ECCB600437968 /* Build configuration list for PBXNativeTarget "CityGuideWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD6A44F72E8ECCB600437968 /* Debug */,
+				BD6A44F82E8ECCB600437968 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6AB8732EA9006100785EB0 /* Build configuration list for PBXNativeTarget "CityGuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD6AB8712EA9006100785EB0 /* Debug */,
+				DD6AB8722EA9006100785EB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD22B1B02D8ACF9D005A8480 /* Project object */;
+}
