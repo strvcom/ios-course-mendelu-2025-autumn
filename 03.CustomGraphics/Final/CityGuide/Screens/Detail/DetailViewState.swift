@@ -13,7 +13,8 @@ import SwiftUI
 final class DetailViewState {
     var mapPlace: MapPlace
     var temperature: String = ""
-
+    var isLoading: Bool = false
+    
     init(mapPlace: MapPlace) {
         self.mapPlace = mapPlace
     }

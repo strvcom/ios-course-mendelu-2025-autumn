@@ -8,14 +8,11 @@
 import SwiftUI
 import MapKit
 
-// 1. Vytvorit var mapView
-// 2. Vytvorit  detailView(), ukazat @ViewBuilder
-// 3. Posunut mapu pod navigation title
-// 4. Ukazat navigation
-
 struct MapView: View {
     @State private var viewModel: MapPlacesViewModel
-    @State var isDetailPresented = false
+    @State private var isDetailPresented = false
+    @State private var isNewPlaceViewPresented = false
+
     @EnvironmentObject var container: DIContainer
     private var connector: WatchConnecting
 
@@ -26,85 +23,122 @@ struct MapView: View {
         self.viewModel = viewModel
         self.connector = connector
     }
-    
+
     var body: some View {
         NavigationStack{
-            Map(
-                position: $viewModel.state.mapCameraPosition,
-                interactionModes: [.pan, .zoom]
-            ) {
-                ForEach(viewModel.state.mapPlaces) { place in
-                    Annotation(
-                        "",
-                        coordinate: place.coordinates
-                    ) {
-                        ZStack {
-                            Circle()
-                                .fill(.white.opacity(0.5))
-                                .stroke(.white.opacity(0.8), lineWidth: 2.0)
-                                .frame(width: 36)
-                            Text(place.type.symbol)
-                            VStack {
-                                Text(place.name)
-                                    .font(.footnote)
-                                    .fontWeight(.semibold)
-                                    .accessibilityIdentifier(.mapViewAnnotationTitle)
-                                
-                                Text(place.style.name)
-                                    .font(.footnote)
-                            }
-                            .padding(5.0)
-                            .background(.white.opacity(0.8))
-                            .clipShape(RoundedRectangle(cornerRadius: 5.0), style: FillStyle())
-                            .offset(y: 40)
-                        }
-                        .accessibilityElement(children: .contain)
-                        .accessibilityIdentifier(.mapViewAnnotationContent)
-                        .onTapGesture {
-                            viewModel.state.selectedPlace = place
-                            isDetailPresented = true
-                        }
-                    }
+            ZStack(alignment: .bottom) {
+                mapView
+
+                VStack {
+                    Spacer()
+
+                    addPointButton
                 }
             }
-            .accessibilityIdentifier(.mapViewMap)
+            .toolbarTitleDisplayMode(.inline)
             .sheet(isPresented: $isDetailPresented) {
                 if let selectedPlace = viewModel.state.selectedPlace {
-                    NavigationStack {
-                        // VM je private, takze potrebuji kontruktor a konstruktor nemuze prevzit Binding
-                        DetailView(
-                            viewModel: DetailViewModel(
-                                place: selectedPlace,
-                                dataManager: container.resolve(),
-                                apiManager: container.resolve()
-                            )
-                        )
-                        .presentationDetents([.fraction(0.3), .medium, .large])
-                        .toolbar {
-                            ToolbarItemGroup(placement: .topBarLeading){
-                                Button("Close") {
-                                    isDetailPresented = false
-                                }
-                            }
-
-                            ToolbarItemGroup(placement: .topBarTrailing){
-                                Button("Send") {
-                                    connector.sendMapPlace(mapPlace: selectedPlace)
-                                }
-                            }
-                        }
-                    }
+                    detailView(selectedPlace: selectedPlace)
+                }
+            }
+            .sheet(isPresented: $isNewPlaceViewPresented) {
+                NavigationStack {
+                    NewMapPlaceView(
+                        isViewPresented: $isNewPlaceViewPresented,
+                        viewModel: viewModel
+                    )
                 }
             }
             .onAppear() {
                 viewModel.fetchMapPlaces()
                 viewModel.syncLocation()
-                
+
                 Task {
                     await viewModel.startPeriodicLocationUpdate()
                 }
             }
             .navigationTitle("Map")
+        }
+    }
+}
+
+private extension MapView {
+    var mapView: some View {
+        Map(
+            position: $viewModel.state.mapCameraPosition,
+            interactionModes: [.pan, .zoom]
+        ) {
+            ForEach(viewModel.state.mapPlaces) { place in
+                Annotation(
+                    "",
+                    coordinate: place.coordinates
+                ) {
+                    VStack {
+                        PinView {
+                            Text(place.type.symbol)
+                        }
+                        .frame(width: 30)
+
+                        VStack {
+                            Text(place.name)
+                                .font(.footnote)
+                                .fontWeight(.semibold)
+                                .accessibilityIdentifier(.mapViewAnnotationTitle)
+
+                            Text(place.style.name)
+                                .font(.footnote)
+                        }
+                        .padding(5.0)
+                        .background(.white.opacity(0.8))
+                        .clipShape(RoundedRectangle(cornerRadius: 5.0), style: FillStyle())
+                    }
+                    .accessibilityElement(children: .contain)
+                    .accessibilityIdentifier(.mapViewAnnotationContent)
+                    .onTapGesture {
+                        viewModel.state.selectedPlace = place
+                        isDetailPresented = true
+                    }
+                }
+            }
+        }
+        .accessibilityIdentifier(.mapViewMap)
+        .clipShape(RoundedRectangle(cornerRadius: 50))
+        .ignoresSafeArea(edges: .bottom)
+    }
+
+    var addPointButton: some View {
+        Button("Add Point") {
+            isNewPlaceViewPresented.toggle()
+        }
+        .buttonStyle(.primary)
+        .padding()
+    }
+
+    @ViewBuilder
+    func detailView(selectedPlace: MapPlace) -> some View {
+        NavigationStack {
+            // VM je private, takze potrebuji kontruktor a konstruktor nemuze prevzit Binding
+            DetailView(
+                viewModel: DetailViewModel(
+                    place: selectedPlace,
+                    dataManager: container.resolve(),
+                    apiManager: container.resolve()
+                )
+            )
+            .presentationDetents([.fraction(0.3), .medium, .large])
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading){
+                    Button("Close") {
+                        isDetailPresented = false
+                    }
+                }
+
+                ToolbarItemGroup(placement: .topBarTrailing){
+                    Button("Send") {
+                        connector.sendMapPlace(mapPlace: selectedPlace)
+                    }
+                }
+            }
         }
     }
 }

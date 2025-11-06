@@ -49,6 +49,12 @@ struct DetailView: View {
             viewModel.fetchWeatherData()
         }
         .background(Colors.background)
+        .overlay {
+            if viewModel.state.isLoading {
+                ProgressView()
+                    .progressViewStyle(.loading)
+            }
+        }
     }
 }
 

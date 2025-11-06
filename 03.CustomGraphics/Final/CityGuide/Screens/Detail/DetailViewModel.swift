@@ -28,6 +28,8 @@ class DetailViewModel: ObservableObject {
     func fetchWeatherData() {
         Task {
             do {
+                state.isLoading = true
+                
                 let weatherData: WeatherData = try await apiManager.request(
                     WeatherDataRouter.dailyMaxTemperature(
                         long: state.mapPlace.coordinates.longitude,
@@ -38,13 +40,14 @@ class DetailViewModel: ObservableObject {
                 guard let temperature = weatherData.daily.maxTemperatures.first else {
                     return
                 }
-
+                
                 let measurement = Measurement(value: temperature, unit: UnitTemperature.celsius)
                 let measurementFormatter = MeasurementFormatter()
                 state.temperature = measurementFormatter.string(from: measurement)
-
+                state.isLoading = false
             } catch {
                 print(error)
+                state.isLoading = false
             }
         }
     }
